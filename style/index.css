@@ -1,117 +1,109 @@
+:root{
+    --white: #F2F3F5;
+    --dark-white: #ECECEC;
+    --black: #0F233C;
+    --blue: #779DCA;
+}
 *{
     padding: 0;
+    margin: 0;
     box-sizing: border-box; 
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    margin: 0;
-    background-color: #779DCA;
-}
-.discord {
-    top: 32px;
-    left: 3px;
-    position: absolute;
-    font-size: 36px;
-    visibility: hidden;
-    opacity: 0;
-    transition: left 0.6s ease, opacity 0.6s ease;
-    -webkit-tap-highlight-color: transparent;
-}
-.discord a{
-    color: #0F233C;
-    background: none;
+    background-color: var(--white);
 }
 .navbar{
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: absolute;
     height: 72px;
-    background-color: transparent;
-    transition: background-color 0.6s ease;
-    z-index: 100;
+    width: 100vw;
+    display: flex;
+    border-radius: 0px 0px 25px 25px;
+    transition: all 0.4s;
 }
+.discord, .dark_theme{
+    position: relative;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    -webkit-tap-highlight-color: transparent;
+    width: 42px;
+    height: 42px;
+    transition: all 0.4s;
+}
+.discord i, .dark_theme i{
+    color: var(--black);
+}
+
+.dark_theme{
+    border: none;
+    outline: none;
+    background: none;
+    margin: 18px 0px 0px 0px;
+}
+
+.discord{
+    margin: 20px 0px 0px 0px;
+}
+
 .article{
-    top: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
-    line-height: 44px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    margin: auto;
     letter-spacing: 0.25em;
-    transition: all 0.6s;
-    color: #0F233C;
+    transition: all 0.4s;
+    color: var(--black);
 }
-.dark_theme {
-    top: 32px;
-    right: 0;
-    position: absolute;
-    font-size: 36px;
-    color: #0F233C;
-    border: none;
-    background: transparent;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
+.hide{
     visibility: hidden;
     opacity: 0;
-    transition: right 0.6s ease, opacity 0.6s ease;
 }
-.sticky {
+.show{
+    visibility: visible;
+    opacity: 1;
+}
+.sticky{
     position: fixed;
 }
-.sticky {
-    background: #ECECEC;
-    height: 72px;
-    width: 100%;
-}
-.sticky article{
+.sticky .article{
     letter-spacing: 0;
-    top: 16px;
+}
+.sticky .navbar{
+    background-color: var(--dark-white);
+}
+.sticky .discord{
+    margin: 20px 0px 0px 20px;
 }
 .sticky .dark_theme{
-    top: 18px;
-    right: 24px;
-    visibility: visible;
-    opacity: 1;
-    transition: right 0.6s ease, opacity 0.6s ease;
+    margin: 18px 20px 0px 0px;
 }
-.sticky .discord {
-    visibility: visible;
-    top: 18px;
-    left: 24px;
-    opacity: 1;
-    transition: left 0.6s ease, opacity 0.6s ease;
-}
-.logo-img{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    top: 0px;
-    background-color: #F2F3F5;
-    padding: 140px 20px;
-    z-index: -100;
+.logo-img img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 96px;
+    width: 256px;
 }
 .first{
-    bottom: 200px;
-    position: absolute;
+    margin-top: 0px;
+    position: relative;
     width: 100%;
-    height: 400px;
+    height: 144px;
     overflow:hidden;
   }
   .first .wave{
-    position:absolute;
+    position: absolute;
     bottom:0;
     left:0;
-    width:100%;
-    height:100px;
+    width: 100%;
+    height: 100px;
     background:url('../gallery/wave.png');
-    background-size:1000px 100px;
+    background-size: 1000px 100px;
   }
   .first .wave.wave1{
       animation:animate 30s linear infinite;
@@ -159,44 +151,37 @@ body{
   }
 
 .welcome{
-    position: absolute;
-    bottom: 0;
-    background-color: #779DCA;
+    background-color: var(--blue);
+    height: 24vh;
+    width: 100vw;
+    font-style: normal;
     font-weight: 600;
     font-size: 36px;
-    line-height: 44px;
+    color: var(--black);
     text-align: center;
-    padding: 0 20px;
-    color: #0F233C;
-    }
-.rules{
-    position: absolute;
-    top: 100vh;
-    background-color: #779DCA;
-    z-index: 1;
+    padding: 20px;
 }
-.content{
-    margin: 64px 20px;
-    background-color: #F2F3F5;
-    padding-top: 32px;
-    border-radius: 25px;
+.rules{
+    background-color: var(--blue);
     padding-bottom: 32px;
 }
+.content{
+    background-color: var(--white);
+    margin: 0px 20px;
+    border-radius: 25px;
+    color: var(--black);
+    padding: 32px 0;
+    
+}
 .caption{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
-    z-index: 1;
+    margin: auto auto 16px auto;
     text-align: center;
-    color: #0F233C;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
 }
 .text{
-    margin: 32px 20px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
+    padding: 0 20px 20px 20px;
 }
 .list{
     margin: 0 40px;
@@ -207,48 +192,49 @@ a{
     color: #779DCA;
     -webkit-tap-highlight-color: transparent;
 }
-
 .second{
-    height: 120px;
+    background-color: var(--blue);
+    position: relative;
+    width: 100%;
+    height: 144px;
     overflow:hidden;
-    z-index: 1000;
   }
   .second .wave{
-    position:absolute;
-    bottom:220px;
+    position: absolute;
+    bottom:0;
     left:0;
-    width:100%;
-    height:100px;
+    width: 100%;
+    height: 100px;
     background:url('../gallery/wave1.png');
-    background-size:1000px 100px;
+    background-size: 1000px 100px;
   }
   .second .wave.wave1{
       animation:animate 30s linear infinite;
-      z-index:-1;
+      z-index:4;
       opacity:1;
       animation-delay:0s;
-      bottom: 220px;
+      bottom: 0;
   }
   .second .wave.wave2{
       animation:animate2 15s linear infinite;
-      z-index:-2;
+      z-index:3;
       opacity:0.5;
       animation-delay:-5s;
-      bottom: 230px;
+      bottom: 10px;
   }
   .second .wave.wave3{
       animation:animate 30s linear infinite;
-      z-index:-3;
+      z-index:2;
       opacity:0.2;
       animation-delay:-2s;
-      bottom: 235px;
+      bottom: 15px;
   }
   .second .wave.wave4{
       animation:animate2 5s linear infinite;
-      z-index:-4;
+      z-index:1;
       opacity:0.7;
       animation-delay:-5s;
-      bottom: 240px;
+      bottom: 20px;
   }
   @keyframes animate{
       0%{

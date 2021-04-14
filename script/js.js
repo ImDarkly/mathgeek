@@ -1,7 +1,15 @@
 $(window).scroll(function() {
-    if ($(document).scrollTop() > 100) {
-      $('.navbar').addClass('sticky');
+    if ($(document).scrollTop() > 0) {
+      $('nav').addClass('sticky');
+      $('.discord').addClass('show');
+      $('.dark_theme').addClass('show');
+      $('.discord').removeClass('hide');
+      $('.dark_theme').removeClass('hide');
     } else {
-      $('.navbar').removeClass('sticky');
+      $('nav').removeClass('sticky');
+      $('.discord').removeClass('show');
+      $('.dark_theme').removeClass('show');
+      $('.discord').addClass('hide');
+      $('.dark_theme').addClass('hide');
     }
   });
