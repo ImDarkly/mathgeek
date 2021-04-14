@@ -3,6 +3,9 @@
     --dark-white: #ECECEC;
     --black: #0F233C;
     --blue: #779DCA;
+    --dm-dark: #121212;
+    --dm-light: #202020;
+
 }
 *{
     padding: 0;
@@ -10,8 +13,16 @@
     box-sizing: border-box; 
     font-family: 'Montserrat', sans-serif;
 }
-body{
+#bg{
+    z-index: -100000;
+}
+body .wm{
     background-color: var(--white);
+    transition: all 0.4s;
+}
+body .dm{
+    background-color: var(--dm-light);
+    transition: all 0.4s;
 }
 .navbar{
     position: absolute;
@@ -32,8 +43,12 @@ body{
     height: 42px;
     transition: all 0.4s;
 }
-.discord i, .dark_theme i{
+.wm .discord i, .wm .dark_theme i{
     color: var(--black);
+}
+
+.dm .discord i, .dm .dark_theme i{
+    color: var(--dark-white);
 }
 
 .dark_theme{
@@ -56,6 +71,11 @@ body{
     margin: auto;
     letter-spacing: 0.25em;
     transition: all 0.4s;
+}
+.dm{
+    color: var(--dark-white);
+}
+.wm{
     color: var(--black);
 }
 .hide{
@@ -68,12 +88,24 @@ body{
 }
 .sticky{
     position: fixed;
+    z-index: 10;
 }
 .sticky .article{
     letter-spacing: 0;
 }
-.sticky .navbar{
+
+.dm .sticky .article, .dm .sticky .discord i, .dm .sticky .dark_theme i, .wm .caption, .wm .text, .wm .list{
+    color: var(--black);
+}
+.dm .sticky .article, .dm .sticky .discord i, .dm .sticky .dark_theme i, .dm .caption, .dm .text, .dm .list{
+    color: var(--dark-white);
+}
+
+.wm .sticky .navbar{
     background-color: var(--dark-white);
+}
+.dm .sticky .navbar{
+    background-color: var(--dm-dark);
 }
 .sticky .discord{
     margin: 20px 0px 0px 20px;
@@ -81,54 +113,60 @@ body{
 .sticky .dark_theme{
     margin: 18px 20px 0px 0px;
 }
-.logo-img img{
+.logo-img{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding-top: 96px;
-    width: 256px;
+    padding-top: 108px;
+    width: 320px;
+}
+.wm .logo-img{
+    content: url('../gallery/wm-logo.png');
+}
+.dm .logo-img{
+    content: url('../gallery/dm-logo.png');
 }
 .first{
     margin-top: 0px;
     position: relative;
     width: 100%;
     height: 144px;
-    overflow:hidden;
+    overflow: hidden;
   }
   .first .wave{
     position: absolute;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100px;
-    background:url('../gallery/wave.png');
+    background: url('../gallery/wave.png');
     background-size: 1000px 100px;
   }
   .first .wave.wave1{
       animation:animate 30s linear infinite;
-      z-index:-1;
+      z-index: 4;
       opacity:1;
       animation-delay:0s;
       bottom: 0;
   }
   .first .wave.wave2{
       animation:animate2 15s linear infinite;
-      z-index:-2;
+      z-index: 3;
       opacity:0.5;
       animation-delay:-5s;
       bottom: 10px;
   }
   .first .wave.wave3{
       animation:animate 30s linear infinite;
-      z-index:-3;
+      z-index: 2;
       opacity:0.2;
       animation-delay:-2s;
       bottom: 15px;
   }
   .first .wave.wave4{
       animation:animate2 5s linear infinite;
-      z-index:-4;
+      z-index: 1;
       opacity:0.7;
       animation-delay:-5s;
       bottom: 20px;
@@ -159,19 +197,24 @@ body{
     font-size: 36px;
     color: var(--black);
     text-align: center;
-    padding: 20px;
+    padding: 60px 20px;
 }
 .rules{
+    padding-top: 64px;
     background-color: var(--blue);
     padding-bottom: 32px;
 }
 .content{
-    background-color: var(--white);
     margin: 0px 20px;
     border-radius: 25px;
     color: var(--black);
     padding: 32px 0;
-    
+}
+.wm .content{
+    background-color: var(--white);
+}
+.dm .content{
+    background-color: var(--dm-light);
 }
 .caption{
     margin: auto auto 16px auto;
@@ -183,10 +226,11 @@ body{
 .text{
     padding: 0 20px 20px 20px;
 }
+
 .list{
     margin: 0 40px;
 }
-a{
+.rules a{
     text-decoration: none;
     font-weight: 700;
     color: #779DCA;
@@ -205,8 +249,13 @@ a{
     left:0;
     width: 100%;
     height: 100px;
-    background:url('../gallery/wave1.png');
     background-size: 1000px 100px;
+  }
+  .wm .second .wave{
+    background: url('../gallery/wm-wave1.png');
+  }
+  .dm .second .wave{
+    background: url('../gallery/dm-wave1.png');
   }
   .second .wave.wave1{
       animation:animate 30s linear infinite;
@@ -254,16 +303,25 @@ a{
   }
 footer{
     padding-bottom: 32px;
+}
+.wm footer{
     background-color: #fff;
 }
+.dm footer{
+    background-color: var(--dm-light);
+}
 .foot{
-    background-color: #fff;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 15px;
-    color: #0F233C;
     text-align: center;
     padding: 0 20px;
     margin: 0;
+}
+.wm .foot{
+    color: var(--black);
+}
+.dm .foot{
+    color: var(--dark-white);
 }

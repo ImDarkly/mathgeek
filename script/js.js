@@ -13,3 +13,9 @@ $(window).scroll(function() {
       $('.dark_theme').addClass('hide');
     }
   });
+
+$('.dark_theme').on('click', function() {
+      
+  $('#bg').toggleClass('dm');
+  $('#bg').toggleClass('wm');
+  });
