@@ -18,4 +18,10 @@ $('.dark_theme').on('click', function() {
       
   $('#bg').toggleClass('dm');
   $('#bg').toggleClass('wm');
+  $('.sun').toggleClass('hide');
+  $('.sun').toggleClass('show');
+  $('.moon').toggleClass('hide');
+  $('.moon').toggleClass('show');
+
+
   });
