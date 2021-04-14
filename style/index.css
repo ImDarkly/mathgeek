@@ -13,17 +13,14 @@
     box-sizing: border-box; 
     font-family: 'Montserrat', sans-serif;
 }
+
 #bg{
-    z-index: -100000;
+    z-index: -10;
 }
-body .wm{
-    background-color: var(--white);
-    transition: all 0.4s;
-}
-body .dm{
-    background-color: var(--dm-light);
-    transition: all 0.4s;
-}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 .navbar{
     position: absolute;
     height: 72px;
@@ -31,6 +28,13 @@ body .dm{
     display: flex;
     border-radius: 0px 0px 25px 25px;
     transition: all 0.4s;
+    align-items: center;
+}
+.navbar-content{
+    text-align: center;
+    width: 100vw;
+    height: 72px;
+    display: flex;
 }
 .discord, .dark_theme{
     position: relative;
@@ -57,6 +61,10 @@ body .dm{
     background: none;
     margin: 18px 0px 0px 0px;
 }
+.sun{
+    position: absolute;
+    right: 8px;
+}
 
 .discord{
     margin: 20px 0px 0px 0px;
@@ -64,7 +72,6 @@ body .dm{
 
 .article{
     display: flex;
-    justify-content: center;
     font-size: 36px;
     font-style: normal;
     font-weight: 500;
@@ -74,9 +81,11 @@ body .dm{
 }
 .dm{
     color: var(--dark-white);
+    background-color: var(--dm-light);
 }
 .wm{
     color: var(--black);
+    background-color: var(--white);
 }
 .hide{
     visibility: hidden;
@@ -197,7 +206,7 @@ body .dm{
     font-size: 36px;
     color: var(--black);
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 0px;
 }
 .rules{
     padding-top: 64px;
@@ -324,4 +333,31 @@ footer{
 }
 .dm .foot{
     color: var(--dark-white);
+}
+@media only screen and (min-width: 600px){
+
+
+    .sticky .discord{
+        margin: 20px 32px 0px 0px;
+    }
+    .sticky .dark_theme{
+        margin: 20px 0px 0px 32px;
+    }
+    .article{
+        margin: auto;
+    }
+    .navbar-content{
+        margin: auto;
+        width: auto;
+    }
+    .dark_theme{
+        margin: 18px 0px 0px 128px;
+    }
+    
+    .discord{
+        margin: 20px 128px 0px 0px;
+    }
+    .content{
+        margin: 0px 144px;
+    }
 }
