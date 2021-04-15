@@ -61,6 +61,7 @@ body::-webkit-scrollbar {
     background: none;
     transition: all 0.4s;
     margin: 18px 0px 0px 0px;
+    cursor: pointer;
 }
 .sun{
     position: absolute;
