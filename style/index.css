@@ -136,7 +136,7 @@ body::-webkit-scrollbar {
     content: url('../gallery/wm-logo.png');
 }
 .dm .logo-img{
-    content: url('../gallery/dm-logo.png');
+    content: url('../gallery/dm-logo.svg');
 }
 .first{
     margin-top: 0px;
