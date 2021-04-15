@@ -252,6 +252,7 @@ body::-webkit-scrollbar {
 }
 .waves{
     position: relative;
+    margin-bottom: -1px;
 }
 .second{
     background-color: var(--blue);
