@@ -22,6 +22,11 @@ $('.dark_theme').on('click', function() {
   $('.sun').toggleClass('show');
   $('.moon').toggleClass('hide');
   $('.moon').toggleClass('show');
+  $('.second').toggleClass('hide');
+  $('.second').toggleClass('show');
+  $('.third').toggleClass('hide');
+  $('.third').toggleClass('show');
+
 
 
   });
