@@ -208,11 +208,13 @@ body::-webkit-scrollbar {
     color: var(--black);
     text-align: center;
     padding: 60px 0px;
+    margin: -1px;
 }
 .rules{
     padding-top: 64px;
     background-color: var(--blue);
     padding-bottom: 32px;
+    margin: -1px;
 }
 .content{
     margin: 0px 20px;
