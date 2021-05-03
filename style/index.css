@@ -214,13 +214,13 @@ body::-webkit-scrollbar {
     color: var(--black);
     text-align: center;
     padding: 60px 0px;
-    margin: -1px;
+    margin: -1px 0;
 }
 .rules{
     padding-top: 64px;
     background-color: var(--blue);
     padding-bottom: 32px;
-    margin: -1px;
+    margin: -1px 0;
 }
 .content{
     margin: 0px 20px;
@@ -397,7 +397,7 @@ footer{
     line-height: 15px;
     text-align: center;
     padding: 0 20px;
-    margin: 0;
+    margin: -1px 0;
 }
 .wm .foot{
     color: var(--black);
