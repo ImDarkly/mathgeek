@@ -5,8 +5,6 @@
     --blue: #779DCA;
     --dm-dark: #2F3136;
     --dm-light: #36393F;
-    --white-70: rgba(236, 236, 236, 0.7);
-    --dm-dark-70: rgba(47, 49, 54, 0.7);
 
 }
 *{
@@ -106,9 +104,6 @@ body::-webkit-scrollbar {
 .sticky .article{
     letter-spacing: 0;
 }
-.sticky .navbar{
-    backdrop-filter: blur(25px);
-}
 
 .dm .sticky .article, .dm .sticky .discord i, .dm .sticky .dark_theme i, .wm .caption, .wm .text, .wm .list{
     color: var(--black);
@@ -118,10 +113,10 @@ body::-webkit-scrollbar {
 }
 
 .wm .sticky .navbar{
-    background-color: var(--white-70);
+    background-color: var(--dark-white);
 }
 .dm .sticky .navbar{
-    background-color: var(--dm-dark-70);
+    background-color: var(--dm-dark);
 }
 .sticky .discord{
     margin: 20px 0px 0px 20px;
