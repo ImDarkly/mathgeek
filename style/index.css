@@ -41,11 +41,13 @@ body::-webkit-scrollbar {
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 24px;
     -webkit-tap-highlight-color: transparent;
     width: 42px;
     height: 42px;
     transition: all 0.4s;
+    overflow: hidden;
+    background-color: transparent;
 }
 .wm .discord i, .wm .dark_theme i{
     color: var(--black);
@@ -58,18 +60,26 @@ body::-webkit-scrollbar {
 .dark_theme{
     border: none;
     outline: none;
-    background: none;
     transition: all 0.4s;
-    margin: 18px 0px 0px 0px;
-    cursor: pointer;
+    margin: auto 0px auto 0px;
+    border-radius: 50%;
 }
 .sun{
     position: absolute;
-    right: 8px;
+    right: 9px;
 }
 
 .discord{
-    margin: 20px 0px 0px 0px;
+    margin: auto 0px auto 0px;
+    border-radius: 50%;
+    border: none;
+}
+.discord button{
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+    border-radius: 50%;
+    background-color: red;
 }
 
 .article{
@@ -119,10 +129,21 @@ body::-webkit-scrollbar {
     background-color: var(--dm-dark);
 }
 .sticky .discord{
-    margin: 20px 0px 0px 20px;
+    margin: auto 0px auto 20px;
+    cursor: pointer;
 }
 .sticky .dark_theme{
-    margin: 18px 20px 0px 0px;
+    margin: auto 20px auto 0px;
+    cursor: pointer;
+}
+.sticky .discord a{
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+.sticky .dark_theme i{
+    margin: auto;
+    text-align: center;
 }
 .logo-img{
     display: flex;
@@ -427,3 +448,18 @@ footer{
         margin: 0px 144px;
     }
 }
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
